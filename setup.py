@@ -10,7 +10,7 @@ from setuptools import setup
 APP = ['main.py']
 
 OPTIONS = {
-    'includes': {'PySide2.QtWidgets'},
+    'includes': {'PySide2.QtCore', 'PySide2.QtUiTools', 'PySide2.QtGui', 'PySide2.QtWidgets'},
     'qt_plugins': [
         'platforms/libqcocoa.dylib',
         'platforms/libqminimal.dylib',
