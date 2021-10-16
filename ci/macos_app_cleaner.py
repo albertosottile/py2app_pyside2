@@ -3,10 +3,10 @@ import zipfile
 
 PATH = 'dist/Test.app/Contents/Resources/lib'
 
-zin = zipfile.ZipFile(f'{PATH}/python37.zip', 'r')
+zin = zipfile.ZipFile(f'{PATH}/python39.zip', 'r')
 tbd = [path for path in zin.namelist() if 'PySide2/Qt/' in path]
 
-zout = zipfile.ZipFile(f'{PATH}/python37_new.zip', 'w', zipfile.ZIP_DEFLATED)
+zout = zipfile.ZipFile(f'{PATH}/python39_new.zip', 'w', zipfile.ZIP_DEFLATED)
 
 for item in zin.namelist():
     buffer = zin.read(item)
@@ -16,5 +16,5 @@ for item in zin.namelist():
 zout.close()
 zin.close()
 
-os.remove(f'{PATH}/python37.zip')
-os.rename(f'{PATH}/python37_new.zip', f'{PATH}/python37.zip')
+os.remove(f'{PATH}/python39.zip')
+os.rename(f'{PATH}/python39_new.zip', f'{PATH}/python39.zip')
