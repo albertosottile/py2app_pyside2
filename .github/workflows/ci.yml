@@ -55,6 +55,6 @@ jobs:
       - name: Deploy
         uses: actions/upload-artifact@v2
         with:
-          name: dist_37_5_13
+          name: Test
           path: |
             dist/*
