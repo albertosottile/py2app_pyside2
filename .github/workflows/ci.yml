@@ -25,7 +25,19 @@ jobs:
         run: |
           pip3 install -U setuptools wheel pip
           pip3 install shiboken2==5.15.2 pyside2==5.15.2
-          pip3 install altgraph==0.17 macholib==1.15 modulegraph==0.18 py2app==0.24
+          pip3 install altgraph==0.17 macholib==1.15 modulegraph==0.18
+
+      - name: Install py2app
+        run: |
+          git clone https://github.com/albertosottile/py2app.git
+          cd py2app
+          git checkout stubs024
+          cd py2app/apptemplate
+          python3 setup.py build
+          cd ../..
+          python3 setup.py build
+          python3 setup.py install
+          cd ..
 
       - name: Check Python dependencies
         run: |
